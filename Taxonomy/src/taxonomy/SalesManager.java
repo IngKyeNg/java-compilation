@@ -1,0 +1,17 @@
+package taxonomy;
+
+public class SalesManager extends Manager{
+    float PetrolAllowance;
+    double MonthlySales;
+    public SalesManager(String name, double salary, float carAllowance,
+            float petrolAllowance){
+        super(name,salary,carAllowance);
+        PetrolAllowance = petrolAllowance;
+        MonthlySales = 0.0;
+    }    
+    @Override
+    double getMonthlySalary(){
+        return (1.0-EPF_CONTRIBUTION)*(0.6*Salary) + (0.1*MonthlySales) + 
+                CarAllowance + PetrolAllowance;
+    }
+}
